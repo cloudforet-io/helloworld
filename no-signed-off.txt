@@ -1,0 +1,7 @@
+This is test for no-signed-off
+
+To add signed-off, please add -s option to git commit command.
+
+~~~
+git commit -s
+~~~
