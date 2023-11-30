@@ -17,5 +17,5 @@ runs:
         COMMITS_URL: ${{ github.event.pull_request.commits_url }}
       run: |
         echo "$COMMITS_URL"
-        commits="${curl -s -H "Authorization: token $GITHUB_TOKEN" "$COMMITS_URL"}"
+        commits=${curl -s -H "Authorization: token $GITHUB_TOKEN" $COMMITS_URL}
         echo $commits
