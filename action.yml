@@ -1,21 +1,14 @@
-name: Check Signed-off-by in PR
-description: Ensure PRs contain Signed-off-by
-branding:
-  icon: check
-  color: blue
+name: 'Check PR commits signed off'
+description: 'Checks for a sign-off in every commit in a pull request'
+author: 'GitHub'
 inputs:
   token:
-    description: Github token to comment on the PR
+    description: 'GitHub token for commenting on PRs, defaults to using secrets.GITHUB_TOKEN'
+    required: false
     default: ${{ github.token }}
-
 runs:
-  using: composite
-  steps:
-    - shell: bash
-      env:
-        GITHUB_TOKEN: ${{ inputs.token }}
-        COMMITS_URL: ${{ github.event.pull_request.commits_url }}
-      run: |
-        echo "$COMMITS_URL"
-        commits=${curl -s -H "Authorization: token $GITHUB_TOKEN" $COMMITS_URL}
-        echo $commits
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: check-circle
+  color: purple
