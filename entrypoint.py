@@ -1,3 +1,4 @@
 import os
 
-print(os.environ)
+print("==== Commit URL ====")
+print(os.environ['commits_url'])
