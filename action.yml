@@ -5,7 +5,7 @@ inputs:
   token:
     description: 'GitHub token for commenting on PRs, defaults to using secrets.GITHUB_TOKEN'
     required: true
-    default: ${{ secrets.GITHUB_TOKEN }}
+    default: ${{ github.token }}
   commits_url:
     description: 'GitHub PR commit url'
     default: ${{ github.event.pull_request.commits_url }}
