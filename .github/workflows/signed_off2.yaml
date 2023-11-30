@@ -1,0 +1,12 @@
+name: Check signed commits in PR
+on: pull_request
+jobs:
+  check-signed-off:
+    runs-on: ubuntu-latest
+    name: A test
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Check signed commits
+        uses: ./
