@@ -9,6 +9,11 @@ inputs:
   commits_url:
     description: 'GitHub PR commit url'
     default: ${{ github.event.pull_request.commits_url }}
+  issue_url:
+    description: 'GitHub PR issue url'
+    default: ${{ github.event.pull_request.issue_url }}
+
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
