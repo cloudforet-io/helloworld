@@ -7,12 +7,18 @@ inputs:
     required: false
     default: ${{ github.token }}
   commits_url:
-    description: 'GitHub PR commit url'
+    description: 'GitHub PR commits url'
     default: ${{ github.event.pull_request.commits_url }}
+  comments_url:
+    description: 'GitHub PR comments url'
+    default: ${{ github.event.pull_request.comments_url }}
   issue_url:
     description: 'GitHub PR issue url'
     default: ${{ github.event.pull_request.issue_url }}
-
+  label:
+    description: 'Label if succeed'
+    required: false
+    default: 'dco'
 
 runs:
   using: 'docker'
