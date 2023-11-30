@@ -25,7 +25,7 @@ def add_label(url, label):
         raise Exception(f"Failed to add label to issue: {response.status_code}")
 
 def add_comment(url):
-    """ If DCO failed, add comments to issue
+    """ If DCO failed, add signed-off-by to issue
     """
     comment = """
     # Deverloper Certificate of Origin (DCO)
@@ -47,7 +47,7 @@ def add_comment(url):
     data = {
             'body': comment
             }
-    response = requests.post(label_url, headers=headers, data=data)
+    response = requests.post(url, headers=headers, data=data)
     if response.status_code != 200:
         raise Exception(f"Failed to add comment to issue: {response.status_code}")
 
