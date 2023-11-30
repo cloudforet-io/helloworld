@@ -45,7 +45,7 @@ def add_comment(url):
     """
     headers = {"Authorization": "Bearer " + INPUT_TOKEN}
     data = {
-            'body': comment
+            'body': 'comment'
             }
     response = requests.post(url, headers=headers, data=data)
     if response.status_code != 200:
