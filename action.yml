@@ -4,7 +4,7 @@ author: 'GitHub'
 inputs:
   token:
     description: 'GitHub token for commenting on PRs, defaults to using secrets.GITHUB_TOKEN'
-    required: true
+    required: false
     default: ${{ github.token }}
   commits_url:
     description: 'GitHub PR commit url'
