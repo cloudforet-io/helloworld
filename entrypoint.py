@@ -17,7 +17,7 @@ def add_label(url, label="Signed-off-by"):
     """ add label to issue
     """
     label_url = url + "/labels"
-    headers = {"Authorization": "token " + os.environ['INPUT_TOKEN']}
+    headers = {"Authorization": "Bearer " + os.environ['INPUT_TOKEN']}
     response = requests.post(label_url, headers=headers, data=json.dumps({"labels": [label]}))
     if response.status_code != 200:
         print(response.status_code)
